@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Workout Journal</string>
+
+    <string name="notification_title">Seconds remaining: %d</string>
+    <string name="notification_text">Counter: %d</string>
+
+    <string name="counter">Counter</string>
+    <string name="seconds_remaining">Seconds remaining:</string>
+    <string name="repeat">Repeat</string>
+    <string name="sound">Sound</string>
+    <string name="vibrationEnabled">Vibrate</string>
+    <string name="start">START</string>
+    <string name="reset">RESET</string>
+    <string name="set_time">Set timer:</string>
+    <string name="set_reverse_time">Reverse timer:</string>
+    <string name="done">Done!</string>
+    <string name="press_again_to_reset">Press again to reset!</string>
+    <string name="empty_value">--</string>
+
+    <string name="add">Add</string>
+    <string name="exercises">Exercises</string>
+    <string name="create_new_exercise">Create new exercise</string>
+
+    <string name="create_routine">Create routine</string>
+    <string name="name">Name:</string>
+    <string name="exercises_colon">Exercises:</string>
+    <string name="enter_routine_name">Enter routine name</string>
+
+    <string name="routines">Routines</string>
+    <string name="new_routine">New</string>
+</resources>

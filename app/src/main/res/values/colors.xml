@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="red">#e81f27</color>
+    <color name="green">#26c76f</color>
+    <color name="blue">#4394df</color>
+    <color name="textDark">#3e3e3e</color>
+    <color name="textLight">#ffffff</color>
+    <color name="textSemiTransparent">#c0ffffff</color>
+<!--    <color name="textHint">#7f3e3e3e</color>-->
+    <color name="textHint">#9f9f9f</color>
+    <color name="editTextTint">#ffffff</color>
+    <color name="checkButtonTint">#ffffff</color>
+    <color name="mainFAB">#4394DF</color>
+    <color name="minorFAB">#4394DF</color>
+</resources>

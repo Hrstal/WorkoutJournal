@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BaseAnimatedCursorAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<V> {
     private static final String TAG = BaseAnimatedCursorAdapter.class.getSimpleName();
-    private Cursor mCursor;
-    private boolean mDataValid;
-    private int mRowIDColumn;
+    private Cursor cursor;
+    private boolean dataValid;
+    private int rowIDColumn;
     public abstract void onBindViewHolder(V holder, Cursor cursor);
 
     public BaseAnimatedCursorAdapter(Cursor c) {
@@ -24,16 +24,16 @@ public abstract class BaseAnimatedCursorAdapter<V extends RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(V holder, int position) {
-        if (!mDataValid) {
+        if (!dataValid) {
             throw new IllegalStateException("Cannot bind view holder when cursor is in invalid state.");
         }
-        if (!mCursor.moveToPosition(position)) {
+        if (!cursor.moveToPosition(position)) {
             throw new IllegalStateException("Could not move cursor to position " + position + " when trying to bind view holder");
         }
 
 //        holder.setIsRecyclable(false);
 
-        onBindViewHolder(holder, mCursor);
+        onBindViewHolder(holder, cursor);
 
         FromRightToLeft(holder.itemView, position);
 
@@ -42,8 +42,8 @@ public abstract class BaseAnimatedCursorAdapter<V extends RecyclerView.ViewHolde
 
     @Override
     public int getItemCount() {
-        if (mDataValid) {
-            return mCursor.getCount();
+        if (dataValid) {
+            return cursor.getCount();
         } else {
             return 0;
         }
@@ -51,38 +51,38 @@ public abstract class BaseAnimatedCursorAdapter<V extends RecyclerView.ViewHolde
 
     @Override
     public long getItemId(int position) {
-        if (!mDataValid) {
+        if (!dataValid) {
             throw new IllegalStateException("Cannot lookup item id when cursor is in invalid state.");
         }
-        if (!mCursor.moveToPosition(position)) {
+        if (!cursor.moveToPosition(position)) {
             throw new IllegalStateException("Could not move cursor to position " + position + " when trying to get an item id");
         }
-        return mCursor.getLong(mRowIDColumn);
+        return cursor.getLong(rowIDColumn);
     }
 
     public Cursor getItem(int position) {
-        if (!mDataValid) {
+        if (!dataValid) {
             throw new IllegalStateException("Cannot lookup item id when cursor is in invalid state.");
         }
-        if (!mCursor.moveToPosition(position)) {
+        if (!cursor.moveToPosition(position)) {
             throw new IllegalStateException("Could not move cursor to position " + position + " when trying to get an item id");
         }
-        return mCursor;
+        return cursor;
     }
 
     public void swapCursor(Cursor newCursor) {
-        if (newCursor == mCursor) {
+        if (newCursor == cursor) {
             return;
         }
         if (newCursor != null) {
-            mCursor = newCursor;
-            mDataValid = true;
+            cursor = newCursor;
+            dataValid = true;
             notifyDataSetChanged();
         } else {
             notifyItemRangeRemoved(0, getItemCount());
-            mCursor = null;
-            mRowIDColumn = -1;
-            mDataValid = false;
+            cursor = null;
+            rowIDColumn = -1;
+            dataValid = false;
         }
     }
 

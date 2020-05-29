@@ -103,6 +103,11 @@ public class TimerFragment extends Fragment implements LoaderManager.LoaderCallb
             public void onClick(View view) {
                 Timer timer = makeTimerFromInput();
 
+                if(timer == null){
+                    Toast.makeText(getContext(), R.string.cant_create_timer,Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Uri uri = getActivity().getContentResolver().insert(DbContract.Timers.CONTENT_URI, timer.toContentValues());
 
                 long id = Long.valueOf(DbContract.Timers.getTimerId(uri));

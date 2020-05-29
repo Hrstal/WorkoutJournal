@@ -24,8 +24,8 @@ public class ExerciseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int VIEW_TYPE_FOOTER = 1;
     private static final String TAG = ExerciseAdapter.class.getSimpleName();
 
-    private boolean mDataValid;
-    private int mRowIDColumn;
+    private boolean dataValid;
+    private int rowIDColumn;
 
     private Cursor cursor;
 
@@ -95,7 +95,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemCount() {
-        if (mDataValid) {
+        if (dataValid) {
             return cursor.getCount() + 1;
         } else {
             return 1;
@@ -105,7 +105,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemViewType(int position) {
         Log.d(TAG, "getItemViewType position: " + position);
-        if (mDataValid)
+        if (dataValid)
             return (position == cursor.getCount()) ? VIEW_TYPE_FOOTER : VIEW_TYPE_ITEM;
         else return VIEW_TYPE_FOOTER;
     }
@@ -116,13 +116,13 @@ public class ExerciseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
         if (newCursor != null) {
             cursor = newCursor;
-            mDataValid = true;
+            dataValid = true;
             notifyDataSetChanged();
         } else {
             notifyItemRangeRemoved(0, getItemCount());
             cursor = null;
-            mRowIDColumn = -1;
-            mDataValid = false;
+            rowIDColumn = -1;
+            dataValid = false;
         }
     }
 }

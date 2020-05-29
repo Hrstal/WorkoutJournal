@@ -7,7 +7,7 @@ Projekt je ve stádiu vývoje a neplánoval jsem, že bude v tomto stádiu veře
 
 ## O aplikaci
 
-Aplikace má za cíl sloužit jako pomocník při tréninku. Samotnou funkčnost aplikace lze rozdělit do několika hlavních částí.
+Aplikace má za cíl sloužit jako pomocník při tréninku. Samotnou funkčnost aplikace lze rozdělit do několika hlavních částí, mezi kterými se lze posouvat horizontálním swipem.
 
 ### Časovač
 (TODO: úprava animací, grafiky a pár drobností)
@@ -26,4 +26,4 @@ Aplikace má za cíl sloužit jako pomocník při tréninku. Samotnou funkčnost
 ### Tréninkový plán
 (není zatím implementováno)
 
-- předem sestavené pořadí cviků, opakování, přestávek a vah.  
+- předem sestavené pořadí cviků, opakování, přestávek a vah
